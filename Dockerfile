@@ -19,12 +19,18 @@ RUN apt-get update && \
 
 RUN mkdir -p ${ZEPPELIN_HOME}
 
-RUN curl -o zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz http://mirror.easyname.ch/apache/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz
+RUN curl -o zeppelin-0.8.0-bin-all.tar.gz.001 https://github.com/imwower/docker-zeppelin-mongodb/releases/download/v0.8.0/zeppelin-0.8.0-bin-all.tar.gz.001
+RUN curl -o zeppelin-0.8.0-bin-all.tar.gz.002 https://github.com/imwower/docker-zeppelin-mongodb/releases/download/v0.8.0/zeppelin-0.8.0-bin-all.tar.gz.002
+RUN curl -o zeppelin-0.8.0-bin-all.tar.gz.003 https://github.com/imwower/docker-zeppelin-mongodb/releases/download/v0.8.0/zeppelin-0.8.0-bin-all.tar.gz.003
+RUN curl -o zeppelin-0.8.0-bin-all.tar.gz.004 https://github.com/imwower/docker-zeppelin-mongodb/releases/download/v0.8.0/zeppelin-0.8.0-bin-all.tar.gz.004
+RUN curl -o zeppelin-0.8.0-bin-all.tar.gz.005 https://github.com/imwower/docker-zeppelin-mongodb/releases/download/v0.8.0/zeppelin-0.8.0-bin-all.tar.gz.005
+
+RUN cat zeppelin-0.8.0-bin-all.tar.gz.* > zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz
 
 RUN tar -xzvf zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz && \
         mv zeppelin-${ZEPPELIN_VERSION}-bin-all/* ${ZEPPELIN_HOME} && \
         rm -rf zeppelin-${ZEPPELIN_VERSION}-bin-all && \
-        rm -rf *.tar.gz
+        rm -rf *.tar.*
 
 EXPOSE 8080
 
