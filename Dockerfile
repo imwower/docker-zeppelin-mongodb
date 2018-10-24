@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 RUN mkdir -p ${ZEPPELIN_HOME}
 
-RUN curl -o  zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz https://www.dropbox.com/s/efqyogzg7d2jiyc/zeppelin-0.8.0-bin-all.tar.gz?dl=0
+RUN curl -o  zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz https://www.dropbox.com/s/efqyogzg7d2jiyc/zeppelin-0.8.0-bin-all.tar.gz?dl=1
 
 RUN tar -xzvf zeppelin-${ZEPPELIN_VERSION}-bin-all.tar.gz && \
         mv zeppelin-${ZEPPELIN_VERSION}-bin-all/* ${ZEPPELIN_HOME} && \
