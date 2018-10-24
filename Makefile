@@ -1,2 +1,2 @@
 build:
-	docker build -t zeppelin-mongo:0.7.0 .
+	docker build -t docker-zeppelin-mongo:v0.8.0-local .
